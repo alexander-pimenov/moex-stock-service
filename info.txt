@@ -14,8 +14,21 @@ Spring Cache - это абстракция, а реализацией будет
 
 
 После запуска приложения выходим в браузер, переходим на страницу swagger - localhost:8005/swagger-ui.html
-И на странице видим методы нашего контроллера. А так же можно задавать параметры для наших контроллеров,
-по аналогии с Postman.
+И на странице видим методы нашего контроллера. При запуске докер контейнера в swagger-ui не было
+проблем с возвратом данных от биржи,
+а вот Postman дал ответ
+"Internal server error. Exception message:
+Remote host terminated the handshake executing GET https://iss.moex.com/iss/engines/stock/markets/bonds/boards/TQCB/securities.xml?iss.meta=off&iss.only=securities&securities.columns=SECID,PREVADMITTEDQUOTE,SHORTNAME"
+Перейдя по этой ссылке напрямую получил
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <data id="securities">
+        <rows>
+            <row SECID="AMUNIBB2AER2" PREVADMITTEDQUOTE="100.3" SHORTNAME="UBANK11/22" />
+            <row SECID="AMUNIBB2DER6" PREVADMITTEDQUOTE="101.2" SHORTNAME="UBANK02/24" />
+            ...........................................
+
+А так же можно задавать параметры для наших контроллеров, по аналогии с Postman.
 
 Тикеры и фиджики здесь имеют одно и то же значение.
 
